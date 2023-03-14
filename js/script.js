@@ -30,6 +30,7 @@ createApp({
             ],
 
         imageIndex: 0,
+        activeInterval: true,
     }
   },
 
@@ -51,11 +52,27 @@ createApp({
     changeImageIndex(value){
         this.imageIndex = value;
     },
+    stopTimer(){
+        if(this.activeInterval == true){
+            this.activeInterval = false;
+            clearInterval(interval);
+        }
+    },
+
+    startTimer(){
+        if(this.activeInterval == false){
+            interval = setInterval(() => {
+                this.next();
+            }, 3000);
+        }
+    }
 },
 beforeMount() {
-    setInterval(() => {
-        this.next();
-    }, 3000);
+    if(this.activeInterval == true) {
+        interval = setInterval(() => {
+            this.next();
+        }, 3000);
+    }
 },
 
 }).mount('#app')
