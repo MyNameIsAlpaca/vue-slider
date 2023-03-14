@@ -48,5 +48,8 @@ createApp({
             this.imageIndex--;
           }        
     },
+    changeImageIndex(value){
+        this.imageIndex = value;
+    },
   },
 }).mount('#app')
