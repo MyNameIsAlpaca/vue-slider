@@ -51,5 +51,11 @@ createApp({
     changeImageIndex(value){
         this.imageIndex = value;
     },
-  },
+},
+beforeMount() {
+    setInterval(() => {
+        this.next();
+    }, 3000);
+},
+
 }).mount('#app')
