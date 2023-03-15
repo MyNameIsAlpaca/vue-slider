@@ -64,7 +64,7 @@ createApp({
             interval = setInterval(() => {
                 this.next();
                 this.activeInterval = true;
-            }, 1000);
+            }, 3000);
         }
     }
 },
@@ -72,7 +72,7 @@ beforeMount() {
     if(this.activeInterval == true) {
         interval = setInterval(() => {
             this.next();
-        }, 1000);
+        }, 3000);
     }
 },
 
